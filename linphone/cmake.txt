@@ -1,0 +1,71 @@
+cmake -G"Unix Makefiles" ../
+
+ egrep -r -n -i "DebugL|warnL|infoL|TraceL|ErrorL|WriteL" .
+
+
+
+-fPIC  
+-shared表明产生共享库，而-fPIC则表明使用地址无关代码。PIC：Position Independent Code.    
+
+/data/programe/cmake-2.8.12.2/bin/cmake
+sudo -i
+
+:set nobomb
+tail -c +4 old_file > new_file
+
+/data/programe/cmake-2.8.12.1/bin/cmake -DCMAKE_C_COMPILER=/opt/hisi-linux/x86-arm/aarch64-himix100-linux/bin/aarch64-himix100-linux-gcc -DCMAKE_CXX_COMPILER=/opt/hisi-linux/x86-arm/aarch64-himix100-linux/bin/aarch64-himix100-linux-g++ ../ 
+
+
+/data/programe/cmake-2.8.12.1/bin/cmake -DCMAKE_C_COMPILER=/opt/hisi-linux/x86-arm/aarch64-himix100-linux/bin/aarch64-himix100-linux-gcc -DCMAKE_CXX_COMPILER=/opt/hisi-linux/x86-arm/aarch64-himix100-linux/bin/aarch64-himix100-linux-g++ -DDEST_PLAT="hi" -DDEST_BOARD="hi" -DENABLE_ARM=true ../
+
+
+log:  /usr/hfai/hfdata/msdata
+
+tcpdump -i eth0 udp -w cap.log
+
+kill -2 kill -9
+
+/data/programe/cmake-2.8.12.1/bin/cmake -DCMAKE_C_COMPILER=/opt/hisi-linux/x86-arm/aarch64-himix100-linux/bin/aarch64-himix100-linux-gcc -DCMAKE_CXX_COMPILER=/opt/hisi-linux/x86-arm/aarch64-himix100-linux/bin/aarch64-himix100-linux-g++ ..
+
+
+挂载
+mount -t nfs -o nolock 172.16.19.150:/home/linxb/huwei/nfs /mnt/nfs/
+
+git config --global core.autocrlf true
+
+export LD_LIBRARY_PATH=/opt/glibc-2.14-build/lib:/usr/local/lib64/
+
+
+----------------------------------------------------------------------------------
+
+海思交叉编译linphone记录：
+
+1编译 libvpx :
+linphone-sdk/cmake-builder/builders/vpx.cmake: 文件添加：
+set(VPX_TARGET "armv7-linux-gcc")
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/app_comm/arm-compile/armlib/lib
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:/home/app_comm/arm-compile/armlib/include
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/home/app_comm/arm-compile/armlib/include
+
+./configure --host=arm-linux --prefix=/home/app_comm/arm-compile/armlib/ CC=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc
+
+-DCMAKE_C_COMPILER=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc DCMAKE_CXX_COMPILER=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-g++ 
+
+./prepare.py desktop-raspberry -DCMAKE_C_COMPILER=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc -DCMAKE_CXX_COMPILER=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-g++  -DENABLE_OPENH264=ON -DENABLE_WEBRTC_AEC=OFF -DENABLE_UNIT_TESTS=OFF -DENABLE_MKV=OFF -DENABLE_FFMPEG=ON -DENABLE_CXX_WRAPPER=OFF -DENABLE_NON_FREE_CODECS=ON -DENABLE_VCARD=OFF -DENABLE_BV16=OFF -DENABLE_V4L=OFF
+
+./prepare.py desktop-raspberry -DENABLE_OPENH264=ON -DENABLE_WEBRTC_AEC=OFF -DENABLE_UNIT_TESTS=OFF -DENABLE_MKV=OFF -DENABLE_FFMPEG=ON -DENABLE_CXX_WRAPPER=OFF -DENABLE_NON_FREE_CODECS=ON -DENABLE_VCARD=OFF -DENABLE_BV16=OFF -DENABLE_V4L=OFF 
+
+make ARCH=arm
+
+--enable-cross-compile
+
+
+ cmake /home/app_comm/linphone/linphone-desktop/linphone-sdk/cmake-builder -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/home/app_comm/linphone/linphone-desktop/OUTPUT/no-ui -DCMAKE_INSTALL_PREFIX=/home/app_comm/linphone/linphone-desktop/OUTPUT/no-ui -DCMAKE_NO_SYSTEM_FROM_IMPORTED=YES -DLINPHONE_BUILDER_WORK_DIR=/home/app_comm/linphone/linphone-desktop/WORK/no-ui -DCMAKE_INSTALL_MESSAGE=LAZY -DLINPHONE_BUILDER_CONFIG_FILE=configs/config-desktop.cmake -DLINPHONE_BUILDER_EXTERNAL_SOURCE_PATH=/home/app_comm/linphone/linphone-desktop/linphone-sdk -DLINPHONE_BUILDER_ALTERNATE_EXTERNAL_SOURCE_PATH=/home/app_comm/linphone/linphone-desktop/submodules -DENABLE_OPENH264=ON -DENABLE_WEBRTC_AEC=OFF -DENABLE_UNIT_TESTS=OFF -DENABLE_MKV=OFF -DENABLE_FFMPEG=OFF -DENABLE_CXX_WRAPPER=OFF -DENABLE_NON_FREE_CODECS=ON -DENABLE_VCARD=OFF -DENABLE_BV16=OFF -DENABLE_V4L=OFF -DCMAKE_C_COMPILER=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc -DCMAKE_CXX_COMPILER=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-g++
+
+cmake /home/app_comm/linphone/linphone-desktop/linphone-sdk/cmake-builder -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/home/app_comm/linphone/linphone-desktop/OUTPUT/desktop-raspberry -DCMAKE_INSTALL_PREFIX=/home/app_comm/linphone/linphone-desktop/OUTPUT/desktop-raspberry -DCMAKE_NO_SYSTEM_FROM_IMPORTED=YES -DLINPHONE_BUILDER_WORK_DIR=/home/app_comm/linphone/linphone-desktop/WORK/desktop-raspberry -DCMAKE_TOOLCHAIN_FILE=toolchains/toolchain-raspberry.cmake -DCMAKE_INSTALL_MESSAGE=LAZY -DLINPHONE_BUILDER_CONFIG_FILE=configs/config-desktop-raspberry.cmake -DLINPHONE_BUILDER_EXTERNAL_SOURCE_PATH=/home/app_comm/linphone/linphone-desktop/linphone-sdk -DLINPHONE_BUILDER_ALTERNATE_EXTERNAL_SOURCE_PATH=/home/app_comm/linphone/linphone-desktop/submodules -DCMAKE_C_COMPILER=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-gcc -DCMAKE_CXX_COMPILER=/opt/hisi-linux/x86-arm/arm-himix200-linux/bin/arm-himix200-linux-g++
+
+
+
+
+

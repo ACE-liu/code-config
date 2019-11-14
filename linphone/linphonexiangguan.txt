@@ -1,0 +1,15 @@
+Fail to get a mixer for device
+
+ALSA: found card with name
+
+call sip:1002@192.168.123.6
+
+call sip:1008@192.168.123.6
+
+call sip:1003@121.40.242.234
+
+call sip:1002@121.40.242.234
+
+
+record a.wav
+soundcard use files
