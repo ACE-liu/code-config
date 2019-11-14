@@ -261,16 +261,11 @@
        <action application="set" data="RECORD_DATE=${strftime(%Y-%m-%d %H:%M)}"/> 
       <action application="set" data="RECORD_STEREO=true"/>
       <action application="set" data="RECORD_ANSWER_REQ=true"/>
-      <action application="record_session" data="$${run_dir}/recordings/${strftime(%Y-%m-%d-%H-%M-%S)}_${destination_number}_${caller_id_number}.wav"/>
+      <action application="record_session" data="$${base_dir}/recordings/${caller_id_number}/${strftime(%Y-%m-%d-%H-%M-%S)}_${destination_number}_${caller_id_number}.wav"/>
 	<action application="export" data="dialed_extension=$1"/>
-	<!-- bind_meta_app can have these args <key> [a|b|ab] [a|b|o|s] <app> -->
-    <!--liuliu add for test -->
-	<action application="set" data="proxy_media=true"/>
-	<action application="log" data="CRIT liuliu-------$${run_dir}---------------------------------------------------------------------------------------- "/>
-	<action application="log" data="CRIT liuliu-------${dialed_extension}@${domain_name}---------------------------------------------------------------------------------------- "/>
-	<action application="log" data="CRIT liuliu-------$${external_rtp_ip}---------------------------------------------------------------------------------------- "/>
+	<!--action application="set" data="proxy_media=true"/-->
        <action application="set" data="media_bug_answer_req=true"/>
- <action application="set" data="ringback=${us-ring}"/>
+         <action application="set" data="ringback=${us-ring}"/>
 	<action application="set" data="transfer_ringback=$${hold_music}"/>
 	<action application="set" data="call_timeout=30"/>
 	<action application="set" data="hangup_after_bridge=true"/>
@@ -282,7 +277,6 @@
 	<action application="hash" data="insert/${domain_name}-last_dial_ext/global/${uuid}"/>
 	<!--<action application="export" data="nolocal:rtp_secure_media=${user_data(${dialed_extension}@${domain_name} var rtp_secure_media)}"/>-->
 	<action application="hash" data="insert/${domain_name}-last_dial/${called_party_callgroup}/${uuid}"/>
-	<action application="log" data="CRIT liuliu-------${dialed_extension}@${domain_name}---------------------------------------------------------------------------------------- "/>
         <action application="bridge" data="user/${dialed_extension}@${domain_name}"/>
 	<action application="answer"/>
 	<action application="sleep" data="1000"/>

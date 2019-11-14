@@ -95,11 +95,8 @@
     <param name="rtp-timer-name" value="soft"/>
     <!-- ip address to use for rtp, DO NOT USE HOSTNAMES ONLY IP ADDRESSES -->
     <param name="rtp-ip" value="$${local_ip_v4}"/>
+    <!-- ip address to bind to, DO NOT USE HOSTNAMES ONLY IP ADDRESSES -->
     <param name="sip-ip" value="$${local_ip_v4}"/>
-    <!--param name="rtp-ip" value="0.0.0.0"/-->
-    <!-- ip address to bind to, DO NOT USE HOSTNAMES ONLY IP ADDRESSES -->
-    <!--param name="sip-ip" value="0.0.0.0"/-->
-    <!-- ip address to bind to, DO NOT USE HOSTNAMES ONLY IP ADDRESSES -->
     <param name="hold-music" value="$${hold_music}"/>
     <param name="apply-nat-acl" value="nat.auto"/>
 
@@ -237,7 +234,6 @@
 
     <!--Uncomment to set all inbound calls to proxy media mode-->
     <!--<param name="inbound-proxy-media" value="true"/>-->
-    <param name="inbound-proxy-media" value="true"/>
 
     <!-- Let calls hit the dialplan before selecting codec for the a-leg -->
     <param name="inbound-late-negotiation" value="true"/>
@@ -285,12 +281,9 @@
          auto                  - Use guessed ip.
          auto-nat              - Use ip learned from NAT-PMP or UPNP
     -->
-    <!--param name="ext-rtp-ip" value="$${external_rtp_ip}"/>
-    <param name="ext-sip-ip" value="$${external_rtp_ip}"/-->
-    <param name="ext-rtp-ip" value="121.40.242.234"/>
-    <param name="ext-sip-ip" value="121.40.242.234"/>
+    <param name="ext-rtp-ip" value="$${external_rtp_ip}"/>
+    <param name="ext-sip-ip" value="$${external_rtp_ip}"/>
 
-    
     <!-- rtp inactivity timeout -->
     <param name="rtp-timeout-sec" value="300"/>
     <param name="rtp-hold-timeout-sec" value="1800"/>
