@@ -279,7 +279,7 @@
 	<action application="hash" data="insert/${domain_name}-last_dial/${called_party_callgroup}/${uuid}"/>
         <action application="bridge" data="user/${dialed_extension}@${domain_name}"/>
 	<action application="answer"/>
-	<action application="sleep" data="1000"/>
+	<!--action application="sleep" data="1000"/-->
       </condition>
     </extension>
 

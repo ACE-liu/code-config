@@ -12,7 +12,7 @@
 
        WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
   -->
-  <X-PRE-PROCESS cmd="set" data="default_password=1234"/>
+  <X-PRE-PROCESS cmd="set" data="default_password=5566"/>
   <!-- Did you change it yet? -->
   <!--
       The following variables are set dynamically - calculated if possible by freeswitch - and
@@ -328,6 +328,7 @@
 
   <!-- various debug and defaults -->
   <X-PRE-PROCESS cmd="set" data="call_debug=false"/>
+  <!--X-PRE-PROCESS cmd="set" data="console_loglevel=err"/-->
   <X-PRE-PROCESS cmd="set" data="console_loglevel=notice"/>
   <!--X-PRE-PROCESS cmd="set" data="console_loglevel=info"/-->
   <X-PRE-PROCESS cmd="set" data="default_areacode=918"/>
@@ -420,8 +421,8 @@
 
   <!-- Internal SIP Profile -->
   <X-PRE-PROCESS cmd="set" data="internal_auth_calls=true"/>
-  <X-PRE-PROCESS cmd="set" data="internal_sip_port=5060"/>
-  <X-PRE-PROCESS cmd="set" data="internal_tls_port=5061"/>
+  <X-PRE-PROCESS cmd="set" data="internal_sip_port=5061"/>
+  <X-PRE-PROCESS cmd="set" data="internal_tls_port=5071"/>
   <X-PRE-PROCESS cmd="set" data="internal_ssl_enable=false"/>
 
   <!-- External SIP Profile -->
