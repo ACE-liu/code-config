@@ -260,23 +260,14 @@
        <action application="set" data="RECORD_TITLE=Recording ${destination_number} ${caller_id_number} ${strftime(%Y-%m-%d %H:%M)}"/>  
        <action application="set" data="RECORD_DATE=${strftime(%Y-%m-%d %H:%M)}"/> 
       <action application="set" data="RECORD_STEREO=true"/>
-      <action application="set" data="RECORD_ANSWER_REQ=true"/>
       <action application="record_session" data="$${base_dir}/recordings/${caller_id_number}/${strftime(%Y-%m-%d-%H-%M-%S)}_${destination_number}_${caller_id_number}.wav"/>
 	<action application="export" data="dialed_extension=$1"/>
 	<!--action application="set" data="proxy_media=true"/-->
-       <action application="set" data="media_bug_answer_req=true"/>
-         <action application="set" data="ringback=${us-ring}"/>
-	<action application="set" data="transfer_ringback=$${hold_music}"/>
+          <action application="set" data="ringback=${us-ring}"/>
 	<action application="set" data="call_timeout=30"/>
 	<action application="set" data="hangup_after_bridge=true"/>
 	<action application="set" data="continue_on_fail=true"/>
-	<action application="hash" data="insert/${domain_name}-call_return/${dialed_extension}/${caller_id_number}"/>
-	<action application="hash" data="insert/${domain_name}-last_dial_ext/${dialed_extension}/${uuid}"/>
-	<action application="set" data="called_party_callgroup=${user_data(${dialed_extension}@${domain_name} var callgroup)}"/>
-	<action application="hash" data="insert/${domain_name}-last_dial_ext/${called_party_callgroup}/${uuid}"/>
-	<action application="hash" data="insert/${domain_name}-last_dial_ext/global/${uuid}"/>
-	<!--<action application="export" data="nolocal:rtp_secure_media=${user_data(${dialed_extension}@${domain_name} var rtp_secure_media)}"/>-->
-	<action application="hash" data="insert/${domain_name}-last_dial/${called_party_callgroup}/${uuid}"/>
+        <!--action application="bridge" data="{absolute_codec_string='PCMA,PCMU'}user/${dialed_extension}@${domain_name}"/-->
         <action application="bridge" data="user/${dialed_extension}@${domain_name}"/>
 	<action application="answer"/>
 	<!--action application="sleep" data="1000"/-->

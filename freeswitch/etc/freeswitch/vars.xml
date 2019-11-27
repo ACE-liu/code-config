@@ -256,8 +256,8 @@
        127 - BV32
 
   -->
-  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8"/>
-  <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8"/>
+  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=G722,PCMU,PCMA,H264,VP8"/>
+  <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=G722,PCMU,PCMA,H264,VP8"/>
 
   <!--
       xmpp_client_profile and xmpp_server_profile
@@ -427,8 +427,8 @@
 
   <!-- External SIP Profile -->
   <X-PRE-PROCESS cmd="set" data="external_auth_calls=false"/>
-  <X-PRE-PROCESS cmd="set" data="external_sip_port=5080"/>
-  <X-PRE-PROCESS cmd="set" data="external_tls_port=5081"/>
+  <X-PRE-PROCESS cmd="set" data="external_sip_port=5090"/>
+  <X-PRE-PROCESS cmd="set" data="external_tls_port=5091"/>
   <X-PRE-PROCESS cmd="set" data="external_ssl_enable=false"/>
 
   <!-- Video Settings -->
