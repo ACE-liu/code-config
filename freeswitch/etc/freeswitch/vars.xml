@@ -256,8 +256,10 @@
        127 - BV32
 
   -->
-  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=G722,PCMU,PCMA,H264,VP8"/>
-  <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=G722,PCMU,PCMA,H264,VP8"/>
+  <!--X-PRE-PROCESS cmd="set" data="global_codec_prefs=G722,PCMU,PCMA,H264,VP8"/>
+  <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=G722,PCMU,PCMA,H264,VP8"/-->
+  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=PCMU,PCMA,H264,VP8"/>
+  <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=PCMU,PCMA,H264,VP8"/>
 
   <!--
       xmpp_client_profile and xmpp_server_profile
@@ -298,8 +300,9 @@
        If unspecified, the bind_server_ip value is used.
        Used by: sofia.conf.xml dingaling.conf.xml
   -->
-  <X-PRE-PROCESS cmd="stun-set" data="external_rtp_ip=stun:stun.freeswitch.org"/>
-
+  <!--  <X-PRE-PROCESS cmd="stun-set" data="external_rtp_ip=stun:stun.freeswitch.org"/> -->
+   <!-- wwq mod -->
+  <!--X-PRE-PROCESS cmd="stun-set" data="external_rtp_ip=stun:106.53.81.225:3478"/--> 
   <!-- external_sip_ip
       Used as the public IP address for SDP.
        Can be an one of:
@@ -311,8 +314,9 @@
        If unspecified, the bind_server_ip value is used.
        Used by: sofia.conf.xml dingaling.conf.xml
   -->
-  <X-PRE-PROCESS cmd="stun-set" data="external_sip_ip=stun:stun.freeswitch.org"/>
-
+  <!-- <X-PRE-PROCESS cmd="stun-set" data="external_sip_ip=stun:stun.freeswitch.org"/> -->
+  <!-- wwq mod -->
+  <!--X-PRE-PROCESS cmd="stun-set" data="external_sip_ip=stun:106.53.81.225:3478"/-->
   <!-- unroll-loops
        Used to turn on sip loopback unrolling.
   -->
@@ -421,15 +425,15 @@
 
   <!-- Internal SIP Profile -->
   <X-PRE-PROCESS cmd="set" data="internal_auth_calls=true"/>
-  <X-PRE-PROCESS cmd="set" data="internal_sip_port=5061"/>
+  <X-PRE-PROCESS cmd="set" data="internal_sip_port=5062"/>
   <X-PRE-PROCESS cmd="set" data="internal_tls_port=5071"/>
-  <X-PRE-PROCESS cmd="set" data="internal_ssl_enable=false"/>
+  <X-PRE-PROCESS cmd="set" data="internal_ssl_enable=true"/>
 
   <!-- External SIP Profile -->
   <X-PRE-PROCESS cmd="set" data="external_auth_calls=false"/>
   <X-PRE-PROCESS cmd="set" data="external_sip_port=5090"/>
   <X-PRE-PROCESS cmd="set" data="external_tls_port=5091"/>
-  <X-PRE-PROCESS cmd="set" data="external_ssl_enable=false"/>
+  <X-PRE-PROCESS cmd="set" data="external_ssl_enable=true"/>
 
   <!-- Video Settings -->
   <!-- Setting the max bandwdith -->
@@ -447,4 +451,6 @@
   <X-PRE-PROCESS cmd="set" data="video_mute_png=$${images_dir}/default-mute.png"/>
   <X-PRE-PROCESS cmd="set" data="video_no_avatar_png=$${images_dir}/default-avatar.png"/>
 
+  <!-- wwq add, rtcp-mux -->
+  <!--X-PRE-PROCESS cmd="set" data="rtcp_mux=true"/-->
 </include>

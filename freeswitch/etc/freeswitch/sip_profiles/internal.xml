@@ -131,7 +131,7 @@
         and create this localnet.auto ACL for this.
     -->
     <param name="local-network-acl" value="localnet.auto"/>
-    <!--<param name="apply-register-acl" value="domains"/>-->
+<!--<param name="apply-register-acl" value="domains"/>-->
     <!--<param name="dtmf-type" value="info"/>-->
 
 
@@ -230,10 +230,10 @@
     <!--<param name="odbc-dsn" value="pgsql://hostaddr=127.0.0.1 dbname=freeswitch user=freeswitch password='' options='-c client_min_messages=NOTICE' application_name='freeswitch'" />-->
 
     <!--Uncomment to set all inbound calls to no media mode-->
-    <!--<param name="inbound-bypass-media" value="true"/>-->
+    <!--param name="inbound-bypass-media" value="true"/-->
 
     <!--Uncomment to set all inbound calls to proxy media mode-->
-    <!--<param name="inbound-proxy-media" value="true"/>-->
+    <!--param name="inbound-proxy-media" value="true"/-->
 
     <!-- Let calls hit the dialplan before selecting codec for the a-leg -->
     <param name="inbound-late-negotiation" value="true"/>
@@ -313,7 +313,7 @@
     <!-- for sip over secure websocket support -->
     <!-- You need wss.pem in $${certs_dir} for wss or one will be created for you -->
     <param name="wss-binding" value=":7443"/>
-
+   
     <!--<param name="delete-subs-on-register" value="false"/>-->
 
     <!-- launch a new thread to process each new inbound register when using heavier backends -->
