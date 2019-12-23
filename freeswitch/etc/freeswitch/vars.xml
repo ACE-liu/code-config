@@ -431,8 +431,8 @@
 
   <!-- External SIP Profile -->
   <X-PRE-PROCESS cmd="set" data="external_auth_calls=false"/>
-  <X-PRE-PROCESS cmd="set" data="external_sip_port=5090"/>
-  <X-PRE-PROCESS cmd="set" data="external_tls_port=5091"/>
+  <X-PRE-PROCESS cmd="set" data="external_sip_port=9090"/>
+  <X-PRE-PROCESS cmd="set" data="external_tls_port=9091"/>
   <X-PRE-PROCESS cmd="set" data="external_ssl_enable=true"/>
 
   <!-- Video Settings -->
