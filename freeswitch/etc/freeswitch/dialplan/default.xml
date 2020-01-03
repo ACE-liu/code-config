@@ -277,6 +277,22 @@
       </condition>
     </extension>
 
+      <extension name="Local_Extension">
+    <condition field="destination_number" expression="^([0-9][0-9][0-9][0-9])$">
+	<action application="export" data="dialed_extension=$1"/>
+	<action application="set" data="proxy_media=true"/>
+        <action application="log" data="CRIT ll.......2121211221===============."/>
+	<action application="set" data="ringback=${us-ring}"/>
+	<action application="set" data="transfer_ringback=$${hold_music}"/>
+	<action application="set" data="call_timeout=30"/>
+	<action application="set" data="hangup_after_bridge=true"/>
+	<action application="set" data="continue_on_fail=true"/>
+	<action application="bridge" data="user/${dialed_extension}@${domain_name}"/>
+	<action application="answer"/>
+	<action application="sleep" data="1000"/>
+      </condition>
+    </extension>
+
     <extension name="Local_Extension_Skinny">
       <condition field="destination_number" expression="^(11[01][0-9])$">
 	<action application="set" data="dialed_extension=$1"/>

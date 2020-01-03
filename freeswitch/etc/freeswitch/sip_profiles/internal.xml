@@ -226,7 +226,7 @@
     <!--<param name="rtp-rewrite-timestamps" value="true"/>-->
     <!--<param name="pass-rfc2833" value="true"/>-->
     <!--If you have ODBC support and a working dsn you can use it instead of SQLite-->
-    <!--<param name="odbc-dsn" value="dsn:user:pass"/>-->
+    <param name="odbc-dsn" value="freeswitch:root:HF@t3123"/>
 
     <!-- Or, if you have PGSQL support, you can use that -->
     <!--<param name="odbc-dsn" value="pgsql://hostaddr=127.0.0.1 dbname=freeswitch user=freeswitch password='' options='-c client_min_messages=NOTICE' application_name='freeswitch'" />-->

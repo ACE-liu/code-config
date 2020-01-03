@@ -35,11 +35,6 @@
     </variables>
 
     <groups>
-      <group name="default">
-	<users>
-	  <X-PRE-PROCESS cmd="include" data="default/*.xml"/>
-	</users>
-      </group>
 
       <group name="sales">
 	<users>
