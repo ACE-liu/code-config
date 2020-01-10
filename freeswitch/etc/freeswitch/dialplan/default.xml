@@ -262,7 +262,7 @@
       <action application="set" data="RECORD_STEREO=true"/>
       <action application="set" data="legacyDTLS=true"/>
       <action application="set" data="media_bug_answer_req=true"/>
-      <action application="record_session" data="$${base_dir}/recordings/${caller_id_number}/${strftime(%Y-%m-%d-%H-%M-%S)}_${destination_number}_${caller_id_number}.mp3"/>
+      <action application="record_session" data="$${base_dir}/recordings/${caller_id_number}/${strftime(%Y-%m-%d-%H-%M-%S)}_${caller_id_number}_${destination_number}.mp3"/>
 	<action application="export" data="dialed_extension=$1"/>
 	<!--action application="set" data="proxy_media=true"/-->
           <action application="set" data="ringback=${us-ring}"/>
